@@ -1,0 +1,15 @@
+<div id="list" ng-controller="movieCtrl">
+	<span class="label label-default">Search</span>: <input ng-model="query">
+	<span class="label label-default">Sort by</span>:
+		<input type="radio" name="sex" value="title" ng-model="orderby" checked="checked">Title | 
+		<input type="radio" name="sex" value="rank" ng-model="orderby">Rank
+	<span class="label label-default">Limit result</span>: <input ng-model="limitto">
+	<hr>
+
+	<div ng-repeat="movie in movies | filter:query | orderBy:orderby | limitTo:limitto">
+		<a href="#/details/{{movie.rank - 1}}">
+			<img src="./data/images/{{movie.imdbID}}.jpg" width="30" height="40">
+			<span><strong>{{movie.title}}</strong> (Rank: {{movie.rank}})</span>
+		</a>
+	</div>
+</div>
