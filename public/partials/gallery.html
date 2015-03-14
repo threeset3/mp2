@@ -1,9 +1,24 @@
 <div class="row">
-	<a href=""></a>
+	<div class="col-sm-10 col-sm-offset-1">
+		<a href="" class="btn btn-md btn-primary">All</a>
+		<a href="" class="btn btn-md btn-primary">Action</a>
+		<a href="" class="btn btn-md btn-primary">Adventure</a>
+		<a href="" class="btn btn-md btn-primary">Crime</a>
+		<a href="" class="btn btn-md btn-primary">Comedy</a>
+		<a href="" class="btn btn-md btn-primary">Drama</a>
+		<a href="" class="btn btn-md btn-primary">Musical</a>
+		<a href="" class="btn btn-md btn-primary">Mystery</a>
+		<a href="" class="btn btn-md btn-primary">Romance</a>
+		<a href="" class="btn btn-md btn-primary">Sci-Fi</a>
+		<a href="" class="btn btn-md btn-primary">Thriller</a>
+		<a href="" class="btn btn-md btn-primary">Western</a>
+	</div>
 </div>
-
+<hr>
 <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-		<img ng-repeat="movie in movies | orderBy:rank" src="./data/images/{{movie.imdbID}}.jpg" width="150" height="200">
+		<a ng-repeat="movie in movies | filter: custom | orderBy:rank" href="#/details/{{movie.rank - 1}}">
+		<img src="./data/images/{{movie.imdbID}}.jpg" width="150" height="200">
+		</a>
 	</div>
 </div>

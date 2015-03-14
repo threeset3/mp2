@@ -23,6 +23,10 @@ angular.module('imdbApp.controllers', [])
 	//var idx = $routeParams.movieID;
 	//$scope.idx = +idx;
 
+	$scope.custom = function(data) {
+		console.debug(data);
+	}
+
 	$http.get('./data/imdb250.json').success(function(data) {
 		$scope.movies = data;
 	});

@@ -7,8 +7,9 @@ h1 {
   color: lighten($orange, 25);
 }
 
-.test {
-  font-size: 1.2rem;
-  color: $blue;
+.fixbg {
+	height: 500px;
+	background-image: url('data/bg.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
-

@@ -6,7 +6,7 @@
 	<span class="label label-default">Limit result</span>: <input ng-model="limitto">
 	<hr>
 
-	<div ng-repeat="movie in movies | filter:query | orderBy:orderby | limitTo:limitto">
+	<div ng-animate="'animate'" class="hover" ng-repeat="movie in movies | filter:query | orderBy:orderby | limitTo:limitto">
 		<a href="#/details/{{movie.rank - 1}}">
 			<img src="./data/images/{{movie.imdbID}}.jpg" width="30" height="40">
 			<span><strong>{{movie.title}}</strong> (Rank: {{movie.rank}})</span>

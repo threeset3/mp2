@@ -2,6 +2,30 @@
 <head>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<style>
+		.hover {
+			-webkit-transition: all 0.1s ease-out 0s;
+			-moz-transition: all 0.1s ease-out 0s;
+			-o-transition: all 0.1s ease-out 0s;
+			transition: all 0.1s ease-out 0s;
+		}
+		.hover:hover {
+			opacity: 1;
+			-webkit-transform: scale(0.975);
+			-moz-transform: scale(0.975);
+			-ms-transform: scale(0.975);
+			transform: scale(0.975);
+		}
+
+		.ng-enter, .ng-leave, .ng-hide {
+			opacity: 0;
+			height: 0px;
+		}
+		.ng-enter-active .ng-leave-active{
+			opacity: 1;
+		}
+	</style>
 </head>
 <body>
 	<div>
