@@ -19,9 +19,8 @@ angular.module('imdbApp.controllers', [])
 	});
 }])
 
-.controller('galleryCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
-	//var idx = $routeParams.movieID;
-	//$scope.idx = +idx;
+.controller('galleryCtrl', ['$scope', '$http', function($scope, $http) {
+	$scope.cur_genre = ""
 
 	$scope.custom = function(data) {
 		console.debug(data);

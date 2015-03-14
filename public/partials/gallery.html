@@ -1,23 +1,24 @@
 <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-		<a href="" class="btn btn-md btn-primary">All</a>
-		<a href="" class="btn btn-md btn-primary">Action</a>
-		<a href="" class="btn btn-md btn-primary">Adventure</a>
-		<a href="" class="btn btn-md btn-primary">Crime</a>
-		<a href="" class="btn btn-md btn-primary">Comedy</a>
-		<a href="" class="btn btn-md btn-primary">Drama</a>
-		<a href="" class="btn btn-md btn-primary">Musical</a>
-		<a href="" class="btn btn-md btn-primary">Mystery</a>
-		<a href="" class="btn btn-md btn-primary">Romance</a>
-		<a href="" class="btn btn-md btn-primary">Sci-Fi</a>
-		<a href="" class="btn btn-md btn-primary">Thriller</a>
-		<a href="" class="btn btn-md btn-primary">Western</a>
+		<input type="radio" value="" ng-model="cur_genre" selected="selected">All&nbsp;
+		<input type="radio" value="action" ng-model="cur_genre">Action&nbsp;
+		<input type="radio" value="adventure" ng-model="cur_genre">Adventure&nbsp;
+		<input type="radio" value="crime" ng-model="cur_genre">Crime&nbsp;
+		<input type="radio" value="comedy" ng-model="cur_genre">Comedy&nbsp;
+		<input type="radio" value="drama" ng-model="cur_genre">Drama&nbsp;
+		<input type="radio" value="musical" ng-model="cur_genre">Musical&nbsp;
+		<input type="radio" value="mystery" ng-model="cur_genre">Mystery&nbsp;
+		<input type="radio" value="romance" ng-model="cur_genre">Romance&nbsp;
+		<input type="radio" value="sci-fi" ng-model="cur_genre">Sci-Fi&nbsp;
+		<input type="radio" value="thriller" ng-model="cur_genre">Thriller&nbsp;
+		<input type="radio" value="western" ng-model="cur_genre">Western&nbsp;
+
 	</div>
 </div>
 <hr>
 <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
-		<a ng-repeat="movie in movies | filter: custom | orderBy:rank" href="#/details/{{movie.rank - 1}}">
+		<a ng-repeat="movie in movies | filter: {'genre': cur_genre} | orderBy:rank" href="#/details/{{movie.rank - 1}}">
 		<img src="./data/images/{{movie.imdbID}}.jpg" width="150" height="200">
 		</a>
 	</div>
