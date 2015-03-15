@@ -7,9 +7,78 @@ h1 {
   color: lighten($orange, 25);
 }
 
+@media (max-width: 400px) {
+	.orbit-container {
+		width: 200px;
+	}
+}
+
+.orbit-container img {
+	width: 100%;
+}
+
+.orbit-bullets-container, .orbit-caption {
+	display: none;
+}
+
+.sec {
+	height: 400px;
+	text-align: center;
+}
+
 .fixbg {
-	height: 500px;
-	background-image: url('data/bg.jpg');
+	background-image: url('../data/bg.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+}
+
+.fixbg h2 {
+	color: white;
+}
+
+@include keyframes (animatedBackground) {
+	from { background-position: 0 0; }
+	to { background-position: 100% 100%; }
+}
+
+.starbg {
+	color: white;
+	background-image: url('../data/slide.jpg');
+	background-position: 0px 0px;
+	background-repeat: repeat-x;
+
+	@include animation(animatedBackground 5s linear infinite);
+}
+
+.vert-align {
+	@include vertical-align;
+}
+
+.video_container {
+	height: 400px;
+	width: 100%;
+	overflow: hidden;
+	background-color: black;
+}
+
+.black-bg {
+	background-color: black;
+}
+
+video {
+	z-index:0;
+	width: 100%;
+	top: 0%;
+	left: 0%;
+	overflow: hidden;
+}
+
+.fa-twitter {
+	color: #4099ff;
+}
+.fa-facebook {
+	color: #3b5998;
+}
+.fa-yelp {
+	color: #af0606;
 }
